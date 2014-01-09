@@ -179,7 +179,7 @@
             fold = $(settings.container).offset().top + $(settings.container).height();
         }
 
-        return fold <= $(element).offset().top - settings.threshold;
+        return $(element).offset() && fold <= $(element).offset().top - settings.threshold;
     };
 
     $.rightoffold = function(element, settings) {
@@ -191,7 +191,7 @@
             fold = $(settings.container).offset().left + $(settings.container).width();
         }
 
-        return fold <= $(element).offset().left - settings.threshold;
+        return $(element).offset() && fold <= $(element).offset().left - settings.threshold;
     };
 
     $.abovethetop = function(element, settings) {
@@ -203,7 +203,7 @@
             fold = $(settings.container).offset().top;
         }
 
-        return fold >= $(element).offset().top + settings.threshold  + $(element).height();
+        return $(element).offset() && fold >= $(element).offset().top + settings.threshold  + $(element).height();
     };
 
     $.leftofbegin = function(element, settings) {
@@ -215,7 +215,7 @@
             fold = $(settings.container).offset().left;
         }
 
-        return fold >= $(element).offset().left + settings.threshold + $(element).width();
+        return $(element).offset() && fold >= $(element).offset().left + settings.threshold + $(element).width();
     };
 
     $.inviewport = function(element, settings) {
